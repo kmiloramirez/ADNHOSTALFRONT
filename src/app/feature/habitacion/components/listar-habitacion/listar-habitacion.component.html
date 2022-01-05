@@ -1,0 +1,19 @@
+<table class="table" id="habitaciones">
+    <thead>
+        <tr>
+            <th scope="col">Numero habitacion</th>
+            <th scope="col">Numero camas</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Descripcion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let habitacion of listaHabitaciones | async">
+            <th>{{habitacion.numero}}</th>
+            <th>{{habitacion.camas}}</th>
+            <th>{{habitacion.precio}}</th>
+            <th>{{habitacion.descripcion}}</th>
+        </tr>
+
+    </tbody>
+</table>

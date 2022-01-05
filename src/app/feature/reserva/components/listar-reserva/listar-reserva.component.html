@@ -1,0 +1,39 @@
+<table class="table" id="reservas">
+    <thead>
+        <tr>
+            <th scope="col">Numero reserva</th>
+            <th scope="col">Nombre</th>
+            <th scope="col ">Numero habitacion</th>
+            <th scope="col">Fecha entrada</th>
+            <th scope="col">Fecha salida</th>
+            <th scope="col">Fecha registro</th>
+            <th scope="col">Costo total</th>
+            <th scope="col">Estado reserva</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let reserva of listaReservas | async">
+            <th>{{reserva.numeroReserva}}</th>
+            <th>{{reserva.nombre}}</th>
+            <th>{{reserva.numeroHabitacion}}</th>
+            <th>{{reserva.fechaEntrada}}</th>
+            <th>{{reserva.fechaSalida}}</th>
+            <th>{{reserva.fechaRegistro}}</th>
+            <th>{{reserva.costoTotal}}</th>
+            <th>{{reserva.estadoReserva}}</th>
+            <th *ngIf="reserva.estadoReserva=='reservado'"><button type="button" class="btn btn-success"
+                    (click)="activaReserva(reserva.numeroReserva,reserva.nombre)">Activar</button></th>
+            <th *ngIf="reserva.estadoReserva=='activa'"><button type="button" class="btn btn-primary"
+                    (click)="terminarReserva(reserva.numeroReserva)">Terminar</button>
+            </th>
+            <th *ngIf="reserva.estadoReserva=='reservado'"><button type="button" class="btn btn-warning"
+                    (click)="editarReserva(reserva.numeroReserva)">Cambiar nombre</button></th>
+            <th *ngIf="reserva.estadoReserva=='reservado'"><button type="button" class="btn btn-danger"
+                    (click)="eliminar(reserva.numeroReserva)">Eliminar</button></th>
+            <th><button type="button" class="btn btn-secondary"
+                    (click)="conocerValorDolares(reserva.numeroReserva)">Valor dolares</button></th>
+
+        </tr>
+
+    </tbody>
+</table>

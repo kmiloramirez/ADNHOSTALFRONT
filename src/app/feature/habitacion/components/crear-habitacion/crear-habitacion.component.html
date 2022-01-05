@@ -1,0 +1,40 @@
+
+<form [formGroup]="formularioCrearHabitacion" (ngSubmit)="crearHabitacion()">
+
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" for="nombre">Numero habitacion</span>
+        </div>
+        <input [formControl]="formularioHabitacion.numero"  type="text" class="form-control" required >
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" for="nombre">Numero Camas</span>
+        </div>
+        <input [formControl]="formularioHabitacion.camas"  type="text" class="form-control" required >
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" for="nombre">Precio</span>
+        </div>
+        <input [formControl]="formularioHabitacion.precio"  type="text" class="form-control" required >
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" for="nombre">Descripcion</span>
+        </div>
+        <input [formControl]="formularioHabitacion.descripcion"  type="text" class="form-control" required >
+    </div>
+
+    <div class="row mb-3">
+        <button type="submit" class="btn btn-primary btn-lg btn-block"> Crear </button>
+    </div>
+    <div class="row mb-3">
+        <a  [routerLink]="['/habitacion/listar']" class="btn btn-danger btn-lg btn-block"> Regresar </a>
+    </div>
+
+</form>

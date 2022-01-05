@@ -1,0 +1,68 @@
+<form [formGroup]="formularioEditarReserva" (ngSubmit)="editarReserva()">
+
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" id="habitacion " for="habitacion">Numero reserva</label>
+        </div>
+        <input class="form-control" value="{{reserva.numeroReserva}}" disabled>
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" for="nombre">Nombre</span>
+        </div>
+        <input [formControl]="formularioReserva.nombre" type="text" class="form-control" required>
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" id="habitacion " for="habitacion">Habitacion</label>
+        </div>
+        <input class="form-control" value="{{reserva.numeroHabitacion}}" disabled>
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="fechaEntrada">Fecha y hora entrada</span>
+        </div>
+        <input class="form-control" value="{{reserva.fechaEntrada}}" disabled>
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="fechaSalida">Fecha y hora salida</span>
+        </div>
+        <input class="form-control" value="{{reserva.fechaSalida}}" disabled>
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="fechaSalida">Fecha y hora salida</span>
+        </div>
+        <input class="form-control" value="{{reserva.fechaSalida}}" disabled>
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="fechaSalida">Fecha registro</span>
+        </div>
+        <input class="form-control" value="{{reserva.fechaRegistro}}" disabled>
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="fechaSalida">Costo total</span>
+        </div>
+        <input class="form-control" value="{{reserva.costoTotal}}" disabled>
+    </div>
+
+
+    <div class="row mb-3">
+        <button type="submit" class="btn btn-primary btn-lg btn-block"> Cambiar nombre</button>
+    </div>
+    <div class="row mb-3">
+        <a  [routerLink]="['/reserva/listar']" class="btn btn-danger btn-lg btn-block"> Regresar </a>
+    </div>
+
+</form>

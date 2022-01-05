@@ -1,0 +1,44 @@
+
+<form [formGroup]="formularioCrearReserva" (ngSubmit)="crearReserva()">
+
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" for="nombre">Nombre</span>
+        </div>
+        <input [formControl]="formularioReserva.nombre"  type="text" class="form-control" required >
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" id="habitacion " for="habitacion">Habitacion</label>
+        </div>
+        <select class="custom-select" [formControl]="formularioReserva.numeroHabitacion" required >
+            <option *ngFor="let habitacion of listaHabitaciones | async" value={{habitacion.numero}}>
+                {{habitacion.numero}}</option>
+        </select>
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="fechaEntrada">Fecha entrada</span>
+        </div>
+        <input type="date" class="form-control" [formControl]="formularioReserva.fechaEntrada" required >
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="fechaSalida">Fecha salida</span>
+        </div>
+        <input type="date" class="form-control"[formControl]="formularioReserva.fechaSalida" required >
+    </div>
+
+
+    <div class="row mb-3">
+        <button type="submit" class="btn btn-primary btn-lg btn-block"> Crear </button>
+    </div>
+    <div class="row mb-3">
+        <a  [routerLink]="['/reserva/listar']" class="btn btn-danger btn-lg btn-block"> Regresar </a>
+    </div>
+
+</form>
