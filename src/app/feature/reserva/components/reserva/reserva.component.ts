@@ -1,4 +1,3 @@
-import { ReservaService } from './../../shared/service/reserva.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ReservaComponent implements OnInit {
 
 
-  constructor(protected reservaService: ReservaService) { }
+  constructor() { }
 
   ngOnInit(): void { }
 

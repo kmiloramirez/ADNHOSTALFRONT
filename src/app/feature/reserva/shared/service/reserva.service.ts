@@ -21,8 +21,7 @@ export class ReservaService {
   }
 
   public eliminar(numeroReserva: number) {
-    console.log(`${environment.endpoint}/reserva?numeroReserva=${numeroReserva}`, this.http.optsName('Elimina Reserva'));
-    return this.http.doDelete<any[]>(`${environment.endpoint}/reserva?numeroReserva=${numeroReserva}`, this.http.optsName('Elimina Reserva'));
+    return this.http.doDelete<boolean>(`${environment.endpoint}/reserva?numeroReserva=${numeroReserva}`, this.http.optsName('Elimina Reserva'));
   }
 
   public crearReserva(comandoReseva:ComandoReserva){

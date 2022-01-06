@@ -1,4 +1,3 @@
-import { TrmService } from '../../shared/services/trm/trm.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,13 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  fecha: Date;
-  valorTrm: number;
-
-  constructor(private trmServicio: TrmService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.fecha = new Date(Date.now());
-    this.trmServicio.consultar().subscribe((trm: number)=>this.valorTrm=trm)
   }
 }
