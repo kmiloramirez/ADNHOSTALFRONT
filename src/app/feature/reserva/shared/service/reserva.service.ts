@@ -30,7 +30,7 @@ export class ReservaService {
   }
 
   public editar(comandoReseva:ComandoReserva){
-    return this.http.doPost<ComandoReserva,void>(`${environment.endpoint}/reserva/modificar`,comandoReseva,this.http.optsName('Modifica Reserva'));
+    return this.http.doPost<ComandoReserva,boolean>(`${environment.endpoint}/reserva/modificar`,comandoReseva,this.http.optsName('Modifica Reserva'));
   }
 
   public consultarDolares(numeroReserva: number) {

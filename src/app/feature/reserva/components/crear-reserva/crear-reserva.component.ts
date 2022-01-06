@@ -22,7 +22,7 @@ export class CrearReservaComponent implements OnInit {
   formularioCrearReserva: FormGroup;
 
   constructor(protected habitacionServicio: HabitacionService,
-    protected reservaServicio: ReservaService,private router: Router, private alertaServicio: AlertService) { }
+    protected reservaServicio: ReservaService,protected router: Router, protected alertaServicio: AlertService) { }
 
   ngOnInit(): void {
     this.listaHabitaciones = this.consultarHabitaciones();

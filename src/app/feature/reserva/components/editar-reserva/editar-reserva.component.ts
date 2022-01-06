@@ -20,11 +20,12 @@ export class EditarReservaComponent implements OnInit {
   numeroReserva: number;
 
   constructor(private activatedRoute: ActivatedRoute,
-    private reservaServicio: ReservaService,private router: Router, private alertaServicio: AlertService
+    public reservaServicio: ReservaService,private router: Router, private alertaServicio: AlertService
   ) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => this.numeroReserva = params['numeroReserva']);
+    console.log(this.numeroReserva)
     this.obtenerReservaYCrearFormulario();
   }
 
@@ -37,7 +38,7 @@ export class EditarReservaComponent implements OnInit {
       this.reservaServicio.editar(comandoReserva).subscribe(()=>{
         this.alertaServicio.alert(
           "Se cambiar el nombre de la reserva",
-          `Se modifico exitosamente el nombre en la reserva:${numeroReserva}`,
+          `Se modifico exitosamente el nombre en la reserva: ${numeroReserva}`,
         );
         this.router.navigate(["/reserva/listar"]);
       },(error)=>{
