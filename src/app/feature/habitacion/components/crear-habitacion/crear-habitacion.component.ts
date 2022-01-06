@@ -18,7 +18,7 @@ export class CrearHabitacionComponent implements OnInit {
   formularioCrearHabitacion: FormGroup;
 
   constructor(protected habitacionServicio: HabitacionService,
-    private router: Router,protected alertaServicio: AlertService) { }
+    protected router: Router,protected alertaServicio: AlertService) { }
 
   ngOnInit(): void {
     this.formularioHabitacion = new FormularioHabitacion();
@@ -46,7 +46,6 @@ export class CrearHabitacionComponent implements OnInit {
              error.error.mensaje,
             "error"
           );
-          console.log(error)
         }
       )
     }
