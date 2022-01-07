@@ -1,3 +1,4 @@
+import { ComandoRespuesta } from './../../../../shared/modelo/comando-respuesta';
 import { ComandoHabitacion } from './../model/comando-habitacion';
 import { Habitacion } from './../model/habitacion';
 import { Injectable } from '@angular/core';
@@ -17,6 +18,6 @@ export class HabitacionService {
   }
 
   public crearHabitacion(comandoHabitacion: ComandoHabitacion) {
-    return this.http.doPost<ComandoHabitacion,number>(`${environment.endpoint}/habitacion`,comandoHabitacion, this.http.optsName('Crear habitaciones'));
+    return this.http.doPost<ComandoHabitacion,ComandoRespuesta>(`${environment.endpoint}/habitacion`,comandoHabitacion, this.http.optsName('Crear habitaciones'));
   }
 }

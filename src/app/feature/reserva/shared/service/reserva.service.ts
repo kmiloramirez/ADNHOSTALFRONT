@@ -1,3 +1,4 @@
+import { ComandoRespuesta } from './../../../../shared/modelo/comando-respuesta';
 import { CobroReserva } from './../modelo/cobro-reserva';
 import { ComandoReserva } from './../modelo/comando-reserva';
 import { Injectable } from '@angular/core';
@@ -25,7 +26,7 @@ export class ReservaService {
   }
 
   public crearReserva(comandoReseva:ComandoReserva){
-    return this.http.doPost<ComandoReserva,number>(`${environment.endpoint}/reserva`,comandoReseva,this.http.optsName('Crea Reserva'));
+    return this.http.doPost<ComandoReserva,ComandoRespuesta>(`${environment.endpoint}/reserva`,comandoReseva,this.http.optsName('Crea Reserva'));
   }
 
   public editar(comandoReseva:ComandoReserva){

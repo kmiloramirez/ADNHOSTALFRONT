@@ -1,3 +1,4 @@
+import { ComandoRespuesta } from './../../../../shared/modelo/comando-respuesta';
 import { of, throwError } from 'rxjs';
 import { AlertService } from './../../../../shared/services/alert/alert.service';
 import { waitForAsync,ComponentFixture, TestBed } from '@angular/core/testing';
@@ -49,7 +50,8 @@ describe('CrearHabitacionComponent', () => {
   });
 
   it('Creando habitacion', () => {
-    spyOn(habitacionServicio,'crearHabitacion').and.returnValue(of(1));
+    const comandoRespuesta = new ComandoRespuesta(1);
+    spyOn(habitacionServicio,'crearHabitacion').and.returnValue(of(comandoRespuesta));
     spyOn(alertaServicio,"alert")
     expect(component.formularioCrearHabitacion.valid).toBeFalsy();
     component.formularioCrearHabitacion.controls.numero.setValue('100');

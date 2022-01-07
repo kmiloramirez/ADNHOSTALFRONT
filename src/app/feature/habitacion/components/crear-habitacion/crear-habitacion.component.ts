@@ -1,3 +1,4 @@
+import { ComandoRespuesta } from './../../../../shared/modelo/comando-respuesta';
 import { AlertService } from './../../../../shared/services/alert/alert.service';
 import { ComandoHabitacion } from './../../shared/model/comando-habitacion';
 import { Router } from '@angular/router';
@@ -33,10 +34,10 @@ export class CrearHabitacionComponent implements OnInit {
       const descripcion: string = this.formularioCrearHabitacion.get("descripcion").value;
       const comandoHabitacion = new ComandoHabitacion(numeroHabitacion, numeroCamas, precio, descripcion,);
       this.habitacionServicio.crearHabitacion(comandoHabitacion).subscribe(
-        () => {
+        (comandoRespuesta: ComandoRespuesta) => {
           this.alertaServicio.alert(
             "Habitacion creada",
-             `La habitacion ${numeroHabitacion} fue creada con exito`
+             `La habitacion ${comandoRespuesta.valor} fue creada con exito`
           );
           this.router.navigate(["/habitacion/listar"]);
         }, (error) => {

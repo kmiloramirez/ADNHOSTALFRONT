@@ -1,3 +1,4 @@
+import { ComandoRespuesta } from './../../../../shared/modelo/comando-respuesta';
 import { AlertService } from './../../../../shared/services/alert/alert.service';
 import { Router } from '@angular/router';
 import { ComandoReserva } from './../../shared/modelo/comando-reserva';
@@ -38,10 +39,10 @@ export class CrearReservaComponent implements OnInit {
       const fechaSalida: Date = this.formularioCrearReserva.get("fechaSalida").value;
       const comandoReserva = new ComandoReserva(null, nombre, fechaEntrada, numeroHabitacion, fechaSalida,null);      
       this.reservaServicio.crearReserva(comandoReserva).subscribe(
-        (resultado) => {
+        (comandoRespuesta: ComandoRespuesta) => {
           this.alertaServicio.alert(
             "Reserva creada",
-             `La reserva ${resultado} fue creada con exito`,
+             `La reserva ${comandoRespuesta.valor} fue creada con exito`,
             "success"
           );
           this.router.navigate(["/reserva/listar"]);

@@ -1,3 +1,4 @@
+import { ComandoRespuesta } from './../../../../shared/modelo/comando-respuesta';
 import { HttpService } from '@core-service/http.service';
 import { HabitacionService } from '@habitacion//shared/service/habitacion.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -86,7 +87,8 @@ describe('CrearReservaComponent', () => {
 
 
   it('crear reserva', () => {
-    spyOn(reservaServicio, 'crearReserva').and.returnValue(of(1));
+    const comandoRespuesta = new ComandoRespuesta(1);
+    spyOn(reservaServicio, 'crearReserva').and.returnValue(of(comandoRespuesta));
 
     expect(component.formularioCrearReserva.valid).toBeFalsy();
 
