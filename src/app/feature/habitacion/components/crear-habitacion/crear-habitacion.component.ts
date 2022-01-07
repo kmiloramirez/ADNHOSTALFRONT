@@ -52,9 +52,4 @@ export class CrearHabitacionComponent implements OnInit {
 
   }
 
-  get form(){
-    return this.formularioCrearHabitacion.controls;
-  }
-
-
 }
