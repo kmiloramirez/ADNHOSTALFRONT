@@ -38,7 +38,7 @@ export class ReservaService {
   }
 
   public cobrarReserva(numeroReserva: number) {
-    return this.http.doPost<ComandoReserva,CobroReserva>(`${environment.endpoint}/reserva/cobrar?numeroReserva=${numeroReserva}`, null ,this.http.optsName('Obtener reservas'));
+    return this.http.doPost<null,CobroReserva>(`${environment.endpoint}/reserva/cobrar?numeroReserva=${numeroReserva}`, null ,this.http.optsName('Obtener reservas'));
   }
   
 }
