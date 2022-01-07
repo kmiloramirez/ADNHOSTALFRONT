@@ -9,8 +9,8 @@ describe('workspace-project App', () => {
   });
 
   it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('Angular Seed');
+    page.navigateTo();     
+    expect(page.getTitleText()).toEqual('Hostal Santa Marta');
   });
 
   afterEach(async () => {

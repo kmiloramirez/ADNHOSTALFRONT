@@ -3,37 +3,37 @@
 
     <div class="input-group mb-3">
         <div class="input-group-prepend">
-            <span class="input-group-text" for="nombre">Numero habitacion</span>
+            <span class="input-group-text" for="numero">Numero habitacion</span>
         </div>
-        <input validar [formControl]="formularioHabitacion.numero" type="text" class="form-control" required>
+        <input validar [formControl]="formularioHabitacion.numero" id="numero" type="text" class="form-control" required>
     </div>
 
     <div class="input-group mb-3">
         <div class="input-group-prepend">
-            <span class="input-group-text" for="nombre">Numero Camas</span>
+            <span class="input-group-text" for="camas">Numero Camas</span>
         </div>
-        <input validar [formControl]="formularioHabitacion.camas" type="text" class="form-control" required>
+        <input validar [formControl]="formularioHabitacion.camas"  id="camas" type="text" class="form-control" required>
     </div>
 
     <div class="input-group mb-3">
         <div class="input-group-prepend">
-            <span class="input-group-text" for="nombre">Precio</span>
+            <span class="input-group-text" for="precio">Precio</span>
         </div>
-        <input validar [formControl]="formularioHabitacion.precio" type="text" class="form-control" required>
+        <input validar [formControl]="formularioHabitacion.precio" id="precio" type="text" class="form-control" required>
     </div>
 
     <div class="input-group mb-3">
         <div class="input-group-prepend">
-            <span class="input-group-text" for="nombre">Descripcion</span>
+            <span class="input-group-text" for="descripcion">Descripcion</span>
         </div>
-        <input validar [formControl]="formularioHabitacion.descripcion" type="text" class="form-control" required>
+        <input validar [formControl]="formularioHabitacion.descripcion" id="descripcion" type="text" class="form-control" required>
     </div>
 
     <div class="row mb-3">
-        <button type="submit" class="btn btn-primary btn-lg btn-block"> Crear </button>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="crear"> Crear </button>
     </div>
     <div class="row mb-3">
-        <a [routerLink]="['/habitacion/listar']" class="btn btn-danger btn-lg btn-block"> Regresar </a>
+        <a [routerLink]="['/habitacion/listar']" class="btn btn-danger btn-lg btn-block" id="regresar"> Regresar </a>
     </div>
 
 </form>
